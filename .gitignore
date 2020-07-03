@@ -20,7 +20,7 @@ target/
 *.ipr
 .mvn
 crawl
-mvmw
+mvnw
 mvnw.cmd
 
 ### NetBeans ###
