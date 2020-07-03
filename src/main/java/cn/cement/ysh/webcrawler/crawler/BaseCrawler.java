@@ -68,7 +68,6 @@ public class BaseCrawler extends WorkerCrawler<Document> {
         return new BaseCrawler(orderId,seed,depth,linkRegex,regexs);
     }
 
-
     @Override
     public void run() {
         try {
