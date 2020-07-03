@@ -47,7 +47,6 @@ public class CrawlerTask{
                 Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue()));
 
         webUrls.parallelStream().forEach(url->{
-            log.info("===parallelStream====");
             WordsCrawler defaultCrawler = new WordsCrawler(orderId,url, deep,null, combinedMap);
             defaultCrawler.start();
         });

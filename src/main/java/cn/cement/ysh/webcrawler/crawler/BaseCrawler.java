@@ -85,8 +85,8 @@ public class BaseCrawler extends WorkerCrawler<Document> {
                 }else{
                     log.info("=== depth:{},title:{},url:{}  当前页面爬取完成! ===", this.orderId,this.atomic.get(), document.title(),this.seed);
                 }
-            if (executor.getActiveCount()<=1 && executor.getQueue().isEmpty()){
-                    log.info("****** orderId:{},当前任务爬取完成! ******", this.orderId,this.seed);
+            if (executor.getActiveCount()<=2 && executor.getQueue().isEmpty()){
+                    log.info("****** orderId:{},当前任务即将爬取完成! ******", this.orderId,this.seed);
                 }
         } catch (IOException e) {
             log.error("depth:{},url:{}  当前页面爬取错误!-->{}",this.atomic.get(), this.seed,e.getMessage());

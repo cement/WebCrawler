@@ -16,10 +16,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Slf4j
-@EnableKnife4j
-@EnableSwagger2
+
 @SpringBootApplication
-@EnableScheduling
+
 public class WebCrawlerApplication extends SpringBootServletInitializer implements ApplicationRunner, CommandLineRunner {
 
     public static void main(String[] args) {
