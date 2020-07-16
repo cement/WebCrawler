@@ -1,6 +1,6 @@
 package cn.cement.ysh.webcrawler.controller;
 
-import cn.cement.ysh.webcrawler.crawler.WordsCrawler;
+import cn.cement.ysh.webcrawler.crawler.KeywordsCrawler;
 import cn.cement.ysh.webcrawler.crawler.WorkerCrawler;
 import cn.cement.ysh.webcrawler.entry.crawler.CrawOrder;
 import cn.cement.ysh.webcrawler.service.CrawlerOrderService;
@@ -53,7 +53,7 @@ public class CrawlerCtrl {
         }
 
         Map<String, String> regexMap = Arrays.asList(regexs.split(",")).stream().collect(Collectors.toMap(Function.identity(), Function.identity()));
-        WordsCrawler defaultCrawler = new WordsCrawler("orderId-0001",seed, depth,linkRegex, regexMap);
+        KeywordsCrawler defaultCrawler = new KeywordsCrawler("orderId-0001",seed, depth,linkRegex, regexMap);
         defaultCrawler.start();
         return ResponseEntity.ok("爬取中。。。");
     }

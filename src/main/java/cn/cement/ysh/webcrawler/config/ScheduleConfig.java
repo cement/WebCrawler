@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.SchedulingConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
@@ -16,11 +17,13 @@ import java.util.concurrent.Executors;
 @Configuration
 public class ScheduleConfig implements SchedulingConfigurer {
 
+
+
     @Override
     public void configureTasks(ScheduledTaskRegistrar taskRegistrar) {
         taskRegistrar.setScheduler(Executors.newScheduledThreadPool(3));
     }
-
+/* 不使用注解是可以启动定时任务*/
 //    @Bean("taskScheduler")
     public ThreadPoolTaskScheduler getCaseThreadPoolTaskScheduler(){
         ThreadPoolTaskScheduler taskScheduler = new ThreadPoolTaskScheduler();
@@ -31,8 +34,6 @@ public class ScheduleConfig implements SchedulingConfigurer {
         taskScheduler.setWaitForTasksToCompleteOnShutdown(true);
         return  taskScheduler;
     }
-
-
 
 
 

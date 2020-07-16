@@ -11,15 +11,15 @@ public class CrawlerThreadFactory implements ThreadFactory {
 
     CrawlerThreadFactory() {
         SecurityManager s = System.getSecurityManager();
-        group = (s != null) ? s.getThreadGroup():Thread.currentThread().getThreadGroup();
-        namePrefix = "crawler-" +poolNumber.getAndIncrement() +"-";
+        group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
+        namePrefix = "crawler-" + poolNumber.getAndIncrement() + "-";
     }
 
     public Thread newThread(Runnable r) {
         Thread t = new Thread(group, r,
                 namePrefix + threadNumber.getAndIncrement(),
                 0);
-        if (!t.isDaemon()){
+        if (!t.isDaemon()) {
             t.setDaemon(true);
         }
         if (t.getPriority() != Thread.NORM_PRIORITY)

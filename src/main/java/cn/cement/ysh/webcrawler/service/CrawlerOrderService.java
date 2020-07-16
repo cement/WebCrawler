@@ -40,5 +40,9 @@ public class CrawlerOrderService {
         return all;
     }
 
+    public Map<String,Object> save(Map dataMap,String collectionName){
+        Map saved = mongoTemplate.save(dataMap, "craw_result_test");
+        return saved;
+    }
 
 }

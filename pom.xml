@@ -2,17 +2,22 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>cn.cement.ysh</groupId>
     <artifactId>webcrawler</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.2.5</version>
     <name>WebCrawler</name>
     <description>WebCrawlerproject for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
     </properties>
 
     <dependencies>
@@ -43,10 +48,10 @@
             <optional>true</optional>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>swagger-bootstrap-ui</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.github.xiaoymin</groupId>-->
+            <!--<artifactId>swagger-bootstrap-ui</artifactId>-->
+        <!--</dependency>-->
         <!-- https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
@@ -77,19 +82,12 @@
             <version>1.13.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/cn.edu.hfut.dmic.webcollector/WebCollector -->
-        <!--<dependency>-->
-            <!--<groupId>cn.edu.hfut.dmic.webcollector</groupId>-->
-            <!--<artifactId>WebCollector</artifactId>-->
-            <!--<version>2.71</version>-->
-        <!--</dependency>-->
-
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.4.0</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.seleniumhq.selenium</groupId>-->
+            <!--<artifactId>selenium-java</artifactId>-->
+            <!--<version>3.4.0</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -97,27 +95,14 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/ognl/ognl -->
-        <dependency>
-            <groupId>ognl</groupId>
-            <artifactId>ognl</artifactId>
-            <version>3.2.14</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>ognl</groupId>-->
+            <!--<artifactId>ognl</artifactId>-->
+            <!--<version>3.2.14</version>-->
+        <!--</dependency>-->
 
 
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <build>
         <plugins>
             <plugin>

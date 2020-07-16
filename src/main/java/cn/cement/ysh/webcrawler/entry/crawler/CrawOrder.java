@@ -26,7 +26,7 @@ public class CrawOrder {
      private List<DicCrawWord> crawWords; // 爬询类别字集合（电话，邮箱，身份证）
      private String themeId; // 主题组id
      private String themeName; // 主题组名称
-     private int deep; // 爬虫最大深度
+     private int deep=1; // 爬虫最大深度
      private int outDeep; // 爬虫最大外部链接深度
      private boolean iused; // 是否启用标志
 

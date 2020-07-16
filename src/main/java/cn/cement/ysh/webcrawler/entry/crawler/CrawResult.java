@@ -16,6 +16,7 @@ public class CrawResult {
     @Id
     private ObjectId _id;
     private String orderId; //爬寻命令id
+    private String title; //网站标题或名称
     private String webUrl; // 网址
     private String crawWord; // 爬寻的关键词
     private String result; // 爬寻结果 多个结果以分号分隔

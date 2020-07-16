@@ -1,7 +1,8 @@
 package cn.cement.ysh.webcrawler.crawler;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
+import cn.cement.ysh.webcrawler.config.ApplicationConfig;
+import cn.cement.ysh.webcrawler.config.CrawlerConfig;
+
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +10,7 @@ public abstract class WorkerCrawler<T> implements ICrawler<T>{
 
 
 //    public static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(100);
-    public static final ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(10,new CrawlerThreadFactory()) ;
+    public static final ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(CrawlerConfig.crawlerThreadCount,new CrawlerThreadFactory()) ;
 //    public static final ExecutorService executor = Executors.newWorkStealingPool();
 
     public static final int START_ASYNC = 0;
@@ -28,9 +29,6 @@ public abstract class WorkerCrawler<T> implements ICrawler<T>{
     }
 
     public static boolean isIdle(){
-        System.out.println(executor.getQueue().toString());
-        System.out.println(executor.getQueue().getClass().getCanonicalName());
-        System.out.println(executor.getActiveCount());
         return executor.getQueue().isEmpty();
     }
 
