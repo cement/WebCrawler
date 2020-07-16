@@ -10,8 +10,6 @@ import java.util.concurrent.ScheduledExecutorService;
 @Configuration
 public class CrawlerConfig {
 
-//    public static ScheduledExecutorService executor = Executors.newScheduledThreadPool(10);
-
     public static boolean isCancancleRuning = false;
     @Value("${crawler.cancancle.runing:false}")
     public void setCancancleRuning(boolean cancleRuning) {
