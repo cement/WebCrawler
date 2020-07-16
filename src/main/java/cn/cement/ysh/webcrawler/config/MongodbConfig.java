@@ -16,11 +16,6 @@ import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 public class MongodbConfig {
 
 
-    public static MongoTemplate mongoTemplate;
-    @Autowired
-    public void setMongoTemplate(MongoTemplate mongoTemplate) {
-        MongodbConfig.mongoTemplate = mongoTemplate;
-    }
 
     /*mongodb图片存储桶名称,配置文件指定*/
     public static   String  bucketName;
