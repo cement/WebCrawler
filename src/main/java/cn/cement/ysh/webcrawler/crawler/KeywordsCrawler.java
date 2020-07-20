@@ -74,7 +74,7 @@ public class KeywordsCrawler extends DefaultCrawler {
     }
 
 
-    public static  void runTask()  throws Exception{
+    public static  void runTask(){
         if (WorkerCrawler.executor.getQueue().size() > 0) {
             log.warn("定时爬取任务正在运行,本次任务退出执行");
             return;
@@ -111,7 +111,6 @@ public class KeywordsCrawler extends DefaultCrawler {
                     }
                 } catch (Exception e) {
                     log.error(e.getMessage());
-                    throw e;
                 }
             });
         }

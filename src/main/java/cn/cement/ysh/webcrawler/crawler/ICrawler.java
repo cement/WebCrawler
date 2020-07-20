@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ICrawler<T> extends Runnable {
 
 
-     T  getDocument() throws IOException;
+     T  getContent() throws IOException;
 
 
      void  resultCallback(T document);
@@ -18,4 +18,7 @@ public interface ICrawler<T> extends Runnable {
 
 
      BaseCrawler newInstance(String orderId,String seed, int depth, String linkRegex, Map<String,String> regexs);
+
+
+     boolean isCanled(String orderId);
 }

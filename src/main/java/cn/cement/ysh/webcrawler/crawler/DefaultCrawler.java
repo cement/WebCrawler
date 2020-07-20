@@ -16,7 +16,7 @@ public class DefaultCrawler extends BaseCrawler {
     }
 
     @Override
-    public Document getDocument() throws IOException {
+    public Document getContent() throws IOException {
         Document document = Jsoup.connect(seed).execute().parse();
         return document;
     }

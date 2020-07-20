@@ -43,7 +43,7 @@ public abstract class BaseCrawler extends WorkerCrawler<Document> {
     }
 
     @Override
-    public abstract Document getDocument() throws IOException;
+    public abstract Document getContent() throws IOException;
 
     @Override
     public abstract void resultCallback(Document document);
@@ -67,7 +67,7 @@ public abstract class BaseCrawler extends WorkerCrawler<Document> {
                 return;
             }
             log.debug(">>>>>> 当前页面开始爬取! >>>>>> :{}-{},{},{}  ", this.orderId, this.atomic.get(), this.keywordRegex.keySet(), this.seed);
-            Document document = getDocument();
+            Document document = getContent();
             resultCallback(document);
             if (atomic.incrementAndGet() < depth) {
                 List<String> allLinks = utils.findAllLinks(document);

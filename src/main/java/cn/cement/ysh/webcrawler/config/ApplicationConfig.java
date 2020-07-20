@@ -15,18 +15,9 @@ import java.util.concurrent.Executors;
 @Configuration
 public class ApplicationConfig {
 
-
-
     public static ExecutorService executorService = Executors.newWorkStealingPool();
 
-//    @Bean("ThreadExecutor")
-//    public ExecutorService taskExecutor() {
-//        ExecutorService executorService = Executors.newWorkStealingPool();
-//        return executorService;
-//    }
-
-
-   public static MongoTemplate mongoTemplate;
+    public static MongoTemplate mongoTemplate;
     @Autowired
     public void setMongoTemplate(MongoTemplate mongoTemplate) {
         ApplicationConfig.mongoTemplate = mongoTemplate;
