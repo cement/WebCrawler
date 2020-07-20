@@ -113,6 +113,7 @@ public class KeywordsCrawler extends DefaultCrawler {
                     log.error(e.getMessage());
                 }
             });
+
         }
     }
 
