@@ -47,8 +47,6 @@ public class utils {
         return contentList;
     }
 
-
-
 //    public static List<String> findContentByRegex(String document, String regex) {
 //        String Regex = "[^\\n\\r]*"+regex+"[^\\n\\r]*";
 //        Pattern pattern = Pattern.compile(Regex);

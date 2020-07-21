@@ -18,7 +18,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static cn.cement.ysh.webcrawler.config.MongodbConfig.crawlerResultName;
-import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadExecutor.executor;
+import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadPoolExecutor.executor;
 
 @Slf4j
 public class KeywordsCrawler extends JsoupCrawler {

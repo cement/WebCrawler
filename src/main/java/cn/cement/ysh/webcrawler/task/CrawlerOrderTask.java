@@ -4,7 +4,6 @@ import cn.cement.ysh.webcrawler.config.ApplicationConfig;
 import cn.cement.ysh.webcrawler.crawler.KeywordsCrawler;
 import cn.cement.ysh.webcrawler.entry.crawler.CrawOrder;
 import cn.cement.ysh.webcrawler.entry.crawler.DicCrawWord;
-import cn.cement.ysh.webcrawler.threadpool.CrawlerThreadExecutor;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -14,7 +13,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Optional;
 
-import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadExecutor.executor;
+import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadPoolExecutor.executor;
 
 @Slf4j
 public class CrawlerOrderTask {

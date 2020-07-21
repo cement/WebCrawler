@@ -3,7 +3,7 @@ package cn.cement.ysh.webcrawler.controller;
 import cn.cement.ysh.webcrawler.crawler.KeywordsCrawler;
 import cn.cement.ysh.webcrawler.entry.crawler.CrawOrder;
 import cn.cement.ysh.webcrawler.service.CrawlerOrderService;
-import cn.cement.ysh.webcrawler.threadpool.CrawlerThreadExecutor;
+import cn.cement.ysh.webcrawler.threadpool.CrawlerThreadPoolExecutor;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -48,7 +48,7 @@ public class CrawlerCtrl {
     @RequestMapping(value = "/startCrawler", method = {RequestMethod.GET})
     public ResponseEntity startCrawler(String seed, int depth, String linkRegex, String regexs){
         Assert.state(!StringUtils.isEmpty(regexs),"爬取关键字或正则表达式不能为空");
-        if (CrawlerThreadExecutor.executor.getActiveCount()>0){
+        if (CrawlerThreadPoolExecutor.executor.getActiveCount()>0){
             return ResponseEntity.ok("任务正在进行中......");
         }
 

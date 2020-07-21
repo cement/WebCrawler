@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadExecutor.executor;
+import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadPoolExecutor.executor;
 
 @Slf4j
 @SpringBootApplication

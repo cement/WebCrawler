@@ -1,6 +1,6 @@
 package cn.cement.ysh.webcrawler.crawler;
 
-import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadExecutor.executor;
+import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadPoolExecutor.executor;
 
 public abstract class WorkerCrawler<T> implements ICrawler<T>{
 

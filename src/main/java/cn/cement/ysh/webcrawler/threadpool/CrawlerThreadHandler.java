@@ -21,7 +21,7 @@ public class CrawlerThreadHandler implements ThreadFactory, Thread.UncaughtExcep
     private final String namePrefix;
     private static String groupName = "CrawLerThreadGroup";
 
-    CrawlerThreadHandler() {
+    public CrawlerThreadHandler() {
 //        SecurityManager s = System.getSecurityManager();
         group = new ThreadGroup(groupName);
 //        group = (s != null) ? s.getThreadGroup() : Thread.currentThread().getThreadGroup();
