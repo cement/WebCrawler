@@ -11,14 +11,20 @@ public interface ICrawler<T> extends Runnable {
      T  getContent() throws IOException;
 
 
-     void  resultCallback(T document);
+     boolean  resultCallback(T document);
 
 
      List<String> linkFilter(List<String> allLinks);
 
 
-     BaseCrawler newInstance(String orderId,String seed, int depth, String linkRegex, Map<String,String> regexs);
+//     BaseCrawler newInstance(String orderId,String seed, int depth, String linkRegex, Map<String,String> regexs);
 
 
-     boolean isCanled(String orderId);
+     List<String> findAllLinks(T content);
+
+     boolean isCancled();
+
+    ICrawler newInstance(String seed, int depth);
+
+    void start(int startType);
 }

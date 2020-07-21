@@ -1,6 +1,5 @@
 package cn.cement.ysh.webcrawler;
 
-import cn.cement.ysh.webcrawler.crawler.WorkerCrawler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -10,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+import static cn.cement.ysh.webcrawler.threadpool.CrawlerThreadExecutor.executor;
+
 @Slf4j
 @SpringBootApplication
 public class WebCrawlerApplication extends SpringBootServletInitializer implements ApplicationRunner, CommandLineRunner {
@@ -18,7 +19,7 @@ public class WebCrawlerApplication extends SpringBootServletInitializer implemen
         log.info(">>>>>> 程序开始 >>>>>>");
         SpringApplication.run(WebCrawlerApplication.class, args);
         Runtime.getRuntime().addShutdownHook(new Thread(()->{
-            WorkerCrawler.executor.shutdownNow();
+            executor.shutdownNow();
             log.info("<<<<<< 程序结束 <<<<<<");
         }));
     }

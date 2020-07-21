@@ -17,23 +17,35 @@ public class CrawlerConfig {
     }
 
 
-    public static int crawlerThreadCount;
-    @Value("${crawler.thread.count:10}")
-    public void setCrawlerThreadCount(int crawlerThreadCount) {
-        CrawlerConfig.crawlerThreadCount = crawlerThreadCount;
-    }
-
-
-    public static String crawlerResultName;
-    @Value("${crawler.result.name:craw_result}")
-    public  void setCrawlerResultName(String crawlerResultName) {
-        CrawlerConfig.crawlerResultName = crawlerResultName;
-    }
-
     public static int crawlerConnectionTimeout;
     @Value("${crawler.connection.timeout:20000}")
     public static void setCrawlerConnectionTimeout(int crawlerConnectionTimeout) {
         CrawlerConfig.crawlerConnectionTimeout = crawlerConnectionTimeout;
+    }
+
+
+    public static int queueLength;
+    @Value("${crawler.queue.length:20000}")
+    public  void setQueueLength(int queueLength) {
+        CrawlerConfig.queueLength = queueLength;
+    }
+
+    public static int corePoolSize;
+    @Value("${crawler.corepool.size:10}")
+    public  void setCorePoolSize(int corePoolSize) {
+        CrawlerConfig.corePoolSize = corePoolSize;
+    }
+
+    public static int maximumPoolSize;
+    @Value("${crawler.maxpool.size:100}")
+    public  void setMaximumPoolSize(int maximumPoolSize) {
+        CrawlerConfig.maximumPoolSize = maximumPoolSize;
+    }
+
+    public static long keepAliveTime;
+    @Value("${crawler.keepalive.time:1800}")
+    public  void setKeepAliveTime(long keepAliveTime) {
+        CrawlerConfig.keepAliveTime = keepAliveTime;
     }
 
 

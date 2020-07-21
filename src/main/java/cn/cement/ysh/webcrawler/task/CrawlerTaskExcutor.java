@@ -1,6 +1,5 @@
 package cn.cement.ysh.webcrawler.task;
 
-import cn.cement.ysh.webcrawler.crawler.KeywordsCrawler;
 import cn.cement.ysh.webcrawler.service.CrawlerOrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class CrawlerTask {
+public class CrawlerTaskExcutor {
 
     @Autowired
     private CrawlerOrderService orderService;
@@ -23,9 +22,9 @@ public class CrawlerTask {
     @Scheduled(fixedRateString = "${crawler.task.fixedRate:3600000}")
     public void keywordCrawlerTask() {
         try {
-            KeywordsCrawler.runTask();
+            CrawlerOrderTask.runTask();
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error(e.getMessage(),e);
         }
     }
 }

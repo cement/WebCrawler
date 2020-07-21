@@ -14,8 +14,6 @@ import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 @Configuration
 public class MongodbConfig {
 
-
-
     /*mongodb图片存储桶名称,配置文件指定*/
     public static   String  bucketName;
     @Value("${mongo.gridfs.bucket.name:fs}")
@@ -43,6 +41,14 @@ public class MongodbConfig {
         GridFSBucket bucket = GridFSBuckets.create(factory.getDb(),bucketName);
         return bucket;
     }
+
+
+    public static String crawlerResultName;
+    @Value("${crawler.result.name:craw_result}")
+    public  void setCrawlerResultName(String crawlerResultName) {
+        MongodbConfig.crawlerResultName = crawlerResultName;
+    }
+
 
 
 }
